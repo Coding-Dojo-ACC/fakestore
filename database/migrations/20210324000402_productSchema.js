@@ -5,7 +5,7 @@ exports.up = function(knex) {
   .createTable('products', tbl => {
       tbl.increments();
       tbl.string('title').unique().notNullable();
-      tbl.numeric('price');
+      tbl.real('price');
       tbl.string('description');
       tbl.string('category');
       tbl.string('image');
