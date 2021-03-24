@@ -3,7 +3,7 @@ const helmet = require('helmet')
 const morgan = require('morgan')
 const cors = require('cors')
 
-// const productRouter = require('../products/productRouter')
+const productRouter = require('../products/productRouter')
 
 const server = express()
 
@@ -12,7 +12,7 @@ server.use(cors())
 server.use(morgan('dev'))
 server.use(express.json())
 
-// server.use('/api/characters', productRouter)
+server.use('/api/products', productRouter)
 
 server.get('/', (req, res) => {
     res.json({ message: 'Server is running'})
